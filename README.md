@@ -14,8 +14,8 @@ const deSlash = require('de-slash');
 deSlash('/user//user-info/')
 //  'user/user-info'
 
-deSlash('https:///domain.com/A//b?')
-//  'https://domain.com/A/b'
+deSlash('https:///domain.com/A//b/?')
+//  'https://domain.com/A/b?'
 
 deSlash(`ftp://domain.com\\\\A//b?who=you%2Fme`, {
   backslash: true,
