@@ -1,0 +1,47 @@
+{
+  "name": "un-slash",
+  "version": "0.0.1",
+  "description": "Useful when dealing with path(url)-like strings with redundant slash and back-slash.",
+  "repository": "https://github.com/lihroff/un-slash.git",
+  "author": "Tommy Lee",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --cache --fix --ext .js src *test*"
+  },
+  "files": [
+    "index.js",
+    "test.js"
+  ],
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.3",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.{js,jsx,ts,tsx,json,less}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "url",
+    "scheme",
+    "http",
+    "https",
+    "redundant",
+    "slash",
+    "RegExp"
+  ],
+  "engines": {
+    "node": ">=8"
+  }
+}
