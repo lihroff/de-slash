@@ -1,8 +1,8 @@
 {
-  "name": "un-slash",
+  "name": "de-slash",
   "version": "0.0.1",
   "description": "Useful when dealing with path(url)-like strings with redundant slash and back-slash.",
-  "repository": "https://github.com/lihroff/un-slash.git",
+  "repository": "https://github.com/lihroff/de-slash.git",
   "author": "Tommy Lee",
   "license": "MIT",
   "scripts": {
