@@ -21,15 +21,18 @@ module.exports = (url, opt) => {
     ...opt,
   };
 
-  const reg_url = new RegExp(`^((?:${opt.schemes.join('|')}):\\/\\/)?([^\\?]+)(\\?.*)?$`);
+  const slash = opt.backslash ? `\\\\\/` : `\\/`;
+  const reg_url = new RegExp(`^((?:${opt.schemes.join('|')}):[${slash}]{2,})?([^\\?]+)(\\?.*)?$`);
 
   let [, scheme, path, query] = url.match(reg_url);
 
-  if (opt.backslash) {
-    path = path.replace(/^[\/\\]*|[\/\\]*$/g, '').replace(/[\/\\]{2,}/g, '/');
-  } else {
-    path = path.replace(/^\/*|\/*$/g, '').replace(/\/{2,}/g, '/');
+  if (scheme) {
+    scheme = scheme.replace(new RegExp(`[${slash}]{3,}`), '//');
   }
+
+  path = path
+    .replace(new RegExp(`[${slash}]*$`), '')
+    .replace(new RegExp(`[${slash}]{2,}`, 'g'), '/');
 
   return safeConcatStr(scheme, path, query);
 };

@@ -9,6 +9,8 @@ test('test redundant slash', () => {
   expect(deSlash('abc.com/pathA/pathB?title=my%2Fdear')).toEqual(
     'abc.com/pathA/pathB?title=my%2Fdear',
   );
+
+  expect(deSlash('/root//path/?')).toEqual('/root/path?');
 });
 
 test('test schemes option', () => {
@@ -26,7 +28,7 @@ test('test backslash option', () => {
     backslash: true,
   };
 
-  expect(deSlash('https:///\\abc.com\\\\pathA\\\\\\pathB', opt)).toEqual(
+  expect(deSlash('https:\\///\\abc.com\\\\pathA\\\\\\pathB', opt)).toEqual(
     'https://abc.com/pathA/pathB',
   );
 });

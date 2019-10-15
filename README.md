@@ -11,8 +11,8 @@ npm install de-slash
 ```javscript
 const deSlash = require('de-slash');
 
-deSlash('/user//user-info/')
-//  'user/user-info'
+deSlash('/user//user-info')
+//  '/user/user-info'
 
 deSlash('https:///domain.com/A//b/?')
 //  'https://domain.com/A/b?'
