@@ -1,6 +1,6 @@
 {
   "name": "de-slash",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Useful when dealing with path(url)-like strings with redundant slash and back-slash.",
   "repository": "https://github.com/lihroff/de-slash.git",
   "author": "Tommy Lee",
